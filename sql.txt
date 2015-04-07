@@ -1,0 +1,18 @@
+create table if not exists account(
+    id int(11) auto_increment,
+    username varchar(30) not null,
+    password varchar(32) not null,
+    primary key(id)
+);
+insert into account(username,password) values("root","root");
+
+create table if not exists calendar(
+    id int(11) auto_increment,
+    content varchar(50) not null,
+    level int(11) not null,
+    endDate timestamp,
+    createTime timestamp,
+    primary key(id)
+);
+
+alter table calendar add column status tinyint(1) not null default 0;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>用户登录</title>
+        {% include 'public_css.html' %}
+        <style>
+            input{width:100%;}
+        </style>
+    </head>
+    <body>
+        
+        <div class="panel panel-success">
+            <div class="panel-heading">用户登录</div>
+            <div class="panel-body">
+                
+                {% if code == "1" or code == "2" %}
+                <div class="alert alert-danger" role="alert">
+                {% if code == "1" %}
+                用户名不存在
+                {% else %}
+                密码错误
+                {% endif %}
+                </div>
+                {% endif %}
+                
+                <form action="" method="post">
+                <p>
+                    <input type="text" name="username" required>
+                </p>
+                <p>
+                    <input type="password" name="password" required>
+                </p>
+                <p>
+                    <input type="submit">
+                </p>
+                </form>
+            </div>
+        </div>
+        {% include 'public_js.html' %}
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        {% include 'public_css.html' %}
+        <style>
+            .fullWidth{width:100%;}
+            .css1{margin-top:10px;}
+        </style>
+    </head>
+    <body>
+        
+        <a href="add" class="btn btn-info fullWidth css1">添加日程</a>
+        <hr>
+        
+        {% for obj in lists %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="/finish?id={{ obj.id }}">完成</a>
+                (到期时间：{{ obj.endDate }})
+            </div>
+            <div class="panel-body">
+            {{ obj.content }}
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% include 'public_js.html' %}
+    </body>
+</html>
